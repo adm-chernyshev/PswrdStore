@@ -14,6 +14,8 @@
 		9D5D6ED625BC388A0071C403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5D6ED525BC388A0071C403 /* Assets.xcassets */; };
 		9D5D6ED925BC388A0071C403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5D6ED725BC388A0071C403 /* LaunchScreen.storyboard */; };
 		9D5D6EE125BC3A110071C403 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5D6EE025BC3A110071C403 /* PasscodeViewController.swift */; };
+		9D5D6EE325BC51C80071C403 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5D6EE225BC51C80071C403 /* NavigationViewController.swift */; };
+		9D5D6EEA25C04F500071C403 /* AddNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5D6EE925C04F500071C403 /* AddNewPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		9D5D6ED825BC388A0071C403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D5D6EDA25BC388A0071C403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D5D6EE025BC3A110071C403 /* PasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		9D5D6EE225BC51C80071C403 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		9D5D6EE925C04F500071C403 /* AddNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +64,24 @@
 			children = (
 				9D5D6EC925BC38870071C403 /* AppDelegate.swift */,
 				9D5D6ECB25BC38870071C403 /* SceneDelegate.swift */,
-				9D5D6ECD25BC38870071C403 /* ViewController.swift */,
-				9D5D6EE025BC3A110071C403 /* PasscodeViewController.swift */,
+				9D5D6EE825C04F2B0071C403 /* ViewController */,
 				9D5D6ED525BC388A0071C403 /* Assets.xcassets */,
 				9D5D6ED725BC388A0071C403 /* LaunchScreen.storyboard */,
 				9D5D6EDA25BC388A0071C403 /* Info.plist */,
 				9D5D6ED225BC38870071C403 /* PswrdStore.xcdatamodeld */,
 			);
 			path = PswrdStore;
+			sourceTree = "<group>";
+		};
+		9D5D6EE825C04F2B0071C403 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9D5D6ECD25BC38870071C403 /* ViewController.swift */,
+				9D5D6EE025BC3A110071C403 /* PasscodeViewController.swift */,
+				9D5D6EE225BC51C80071C403 /* NavigationViewController.swift */,
+				9D5D6EE925C04F500071C403 /* AddNewPasswordViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5D6EEA25C04F500071C403 /* AddNewPasswordViewController.swift in Sources */,
+				9D5D6EE325BC51C80071C403 /* NavigationViewController.swift in Sources */,
 				9D5D6ED425BC38870071C403 /* PswrdStore.xcdatamodeld in Sources */,
 				9D5D6ECE25BC38870071C403 /* ViewController.swift in Sources */,
 				9D5D6EE125BC3A110071C403 /* PasscodeViewController.swift in Sources */,
