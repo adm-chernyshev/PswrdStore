@@ -20,6 +20,7 @@ class PasscodeViewController: UIViewController {
         view.backgroundColor = .white
         initFirstButton()
         initLabel()
+//          removeBorder()
     }
     
     func initLabel() {
@@ -57,13 +58,20 @@ class PasscodeViewController: UIViewController {
         useBiometricData()
     }
     
+    func removeBorder() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.layoutIfNeeded()
+    }
+    
     @objc func useBiometricData() {
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Please authenticate") { (success, error) in
                 if success {
                     DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
                         self.presentVC.modalPresentationStyle = .fullScreen
-                        self.present(self.presentVC, animated: true, completion: nil)
+                        // self.present(self.presentVC, animated: true, completion: nil)
                     }
                 } else {
                     guard let error = error else { return }

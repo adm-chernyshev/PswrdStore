@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NavigationViewController.swift
 //  PswrdStore
 //
 //  Created by an.chernyshev on 23/01/2021.
@@ -7,16 +7,12 @@
 //
 
 import UIKit
-import LocalAuthentication
 
-class ViewController: UIViewController {
+class NavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .orange
+
     }
-
-
+    
 }
-
