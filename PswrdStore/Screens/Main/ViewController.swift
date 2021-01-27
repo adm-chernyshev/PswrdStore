@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private let search: UISearchController = UISearchController(searchResultsController: nil)
+    private let button: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.delegate = self
@@ -24,18 +27,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        initNavigationBar()
         initTableView()
+        initNavigationBar()
     }
     
     func initNavigationBar() {
-        let button: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPassword))
-        let search: UISearchController = UISearchController(searchResultsController: nil)
+        button.target = self
+        button.action = #selector(addNewPassword)
         
-        self.navigationItem.rightBarButtonItem = button
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = button
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.topItem?.title = "Passwords"
-        self.navigationItem.searchController = search
+        self.navigationController?.navigationBar.topItem?.searchController = search
     }
     
     func initTableView() {

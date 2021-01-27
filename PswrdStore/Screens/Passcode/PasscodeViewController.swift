@@ -20,7 +20,8 @@ class PasscodeViewController: UIViewController {
         view.backgroundColor = .white
         initFirstButton()
         initLabel()
-//          removeBorder()
+        
+        useBiometricData()
     }
     
     func initLabel() {
@@ -55,13 +56,6 @@ class PasscodeViewController: UIViewController {
         
         button.addTarget(self, action: #selector(useBiometricData), for: .touchUpInside)
         
-        useBiometricData()
-    }
-    
-    func removeBorder() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.layoutIfNeeded()
     }
     
     @objc func useBiometricData() {

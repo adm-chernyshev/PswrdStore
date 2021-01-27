@@ -14,13 +14,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let vc = ViewController()
-        let main = NavigationViewController(rootViewController: vc)
+        let mainVC = ViewController()
+        let tabbar = TabBarController()
+        let settingsVC = SettingsViewController()
+        let settingsNavigationVC = SettingsNavigationViewController(rootViewController: settingsVC)
+        let navigation = NavigationViewController(rootViewController: mainVC)
+        
+        navigation.tabBarItem = UITabBarItem(title: "Passwords", image: UIImage(named: "maintab"), tag: 0)
+        settingsNavigationVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 1)
+
+        tabbar.viewControllers = [navigation, settingsNavigationVC]
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = main
+        window?.rootViewController = tabbar
         window?.makeKeyAndVisible()
     }
     
