@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let settingsNavigationVC = SettingsNavigationViewController(rootViewController: settingsVC)
             let navigation = NavigationViewController(rootViewController: mainVC)
             
-            navigation.tabBarItem = UITabBarItem(title: "Passwords", image: UIImage(named: "MainTabIcon"), tag: 0)
-            settingsNavigationVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: ""), tag: 1)
+            navigation.tabBarItem = UITabBarItem(title: "Passwords", image: UIImage(named: "maintab"), tag: 0)
+            settingsNavigationVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 1)
 
             tabbar.viewControllers = [navigation, settingsNavigationVC]
             
