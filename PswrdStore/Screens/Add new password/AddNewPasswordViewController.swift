@@ -46,7 +46,7 @@ extension AddNewPasswordViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? UITableViewCell {
-            cell.textLabel?.text = "Custom Fields"
+            cell.textLabel?.text = "Custom fields"
             
             return cell
         }

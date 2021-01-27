@@ -20,10 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13, *) {
             //
         } else {
-            let main = PasscodeViewController()
+            let mainVC = ViewController()
+            let tabbar = TabBarController()
+            let settingsVC = SettingsViewController()
+            let settingsNavigationVC = SettingsNavigationViewController(rootViewController: settingsVC)
+            let navigation = NavigationViewController(rootViewController: mainVC)
+            
+            navigation.tabBarItem = UITabBarItem(title: "Passwords", image: UIImage(named: "maintab"), tag: 0)
+            settingsNavigationVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 1)
+
+            tabbar.viewControllers = [navigation, settingsNavigationVC]
             
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = main
+            window?.rootViewController = tabbar
             window?.makeKeyAndVisible()
         }
         return true
