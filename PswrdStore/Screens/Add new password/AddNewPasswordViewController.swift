@@ -9,13 +9,28 @@
 import UIKit
 
 class AddNewPasswordViewController: UIViewController {
+    
+    private let fieldsName = ["Name", "Login", "Password", "Comment"]
+    private let button = UIButton(type: .custom)
+    private let identifier = "cell"
+    
+    lazy var customView: UIView = {
+        let customView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 100))
+        button.frame = .zero
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        customView.addSubview(button)
+        
+        return customView
+    }()
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(AddNewPasswordTableViewCell.self, forCellReuseIdentifier: identifier)
+        tableView.allowsSelection = false
         
         return tableView
     }()
@@ -26,6 +41,11 @@ class AddNewPasswordViewController: UIViewController {
         view.backgroundColor = .white
         self.navigationItem.largeTitleDisplayMode = .never
         initTableView()
+        configureButton()
+    }
+    
+    @objc func saveButton() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func initTableView() {
@@ -37,16 +57,38 @@ class AddNewPasswordViewController: UIViewController {
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
     }
     
+    func configureButton() {
+        button.setTitle("Save", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(saveButton), for: .touchUpInside)
+        
+        button.leftAnchor.constraint(equalTo: customView.leftAnchor, constant: 75).isActive = true
+        button.topAnchor.constraint(equalTo: customView.topAnchor, constant: 50).isActive = true
+        button.rightAnchor.constraint(equalTo: customView.rightAnchor, constant: -75).isActive = true
+        button.bottomAnchor.constraint(equalTo: customView.bottomAnchor, constant: -5).isActive = true
+    }
+    
 }
 
 extension AddNewPasswordViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return customView
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "Credentials"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? UITableViewCell {
-            cell.textLabel?.text = "Custom fields"
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? AddNewPasswordTableViewCell {
+//            cell.textLabel?.text = fieldsName[indexPath.row]
+            cell.textField.placeholder = fieldsName[indexPath.row]
+            if cell.textField.placeholder == "Password" {
+                cell.textField.isSecureTextEntry = true
+            }
             
             return cell
         }
