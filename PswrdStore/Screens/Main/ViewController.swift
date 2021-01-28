@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private let identifier = "cell"
     private let search: UISearchController = UISearchController(searchResultsController: nil)
     private let button: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
     
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: identifier)
         
         return tableView
     }()
@@ -63,7 +64,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? TableViewCell {
             cell.textLabel?.text = "test"
             
             return cell

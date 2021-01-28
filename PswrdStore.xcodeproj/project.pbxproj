@@ -19,6 +19,9 @@
 		9DF854A525C1860F00C0F5DE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF854A425C1860F00C0F5DE /* TabBarController.swift */; };
 		9DF854A725C1870200C0F5DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF854A625C1870200C0F5DE /* SettingsViewController.swift */; };
 		9DF854A925C1D7D300C0F5DE /* SettingsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF854A825C1D7D300C0F5DE /* SettingsNavigationViewController.swift */; };
+		9DF854B025C3073000C0F5DE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF854AF25C3073000C0F5DE /* TableViewCell.swift */; };
+		9DF854B225C3077B00C0F5DE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF854B125C3077B00C0F5DE /* SettingsTableViewCell.swift */; };
+		9DF854B425C307B500C0F5DE /* AddNewPasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF854B325C307B500C0F5DE /* AddNewPasswordTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		9DF854A425C1860F00C0F5DE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9DF854A625C1870200C0F5DE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9DF854A825C1D7D300C0F5DE /* SettingsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationViewController.swift; sourceTree = "<group>"; };
+		9DF854AF25C3073000C0F5DE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		9DF854B125C3077B00C0F5DE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		9DF854B325C307B500C0F5DE /* AddNewPasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPasswordTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 			children = (
 				9D5D6ECD25BC38870071C403 /* ViewController.swift */,
 				9D5D6EE225BC51C80071C403 /* NavigationViewController.swift */,
+				9DF854AF25C3073000C0F5DE /* TableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 			children = (
 				9DF854A625C1870200C0F5DE /* SettingsViewController.swift */,
 				9DF854A825C1D7D300C0F5DE /* SettingsNavigationViewController.swift */,
+				9DF854B125C3077B00C0F5DE /* SettingsTableViewCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -121,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				9D5D6EE925C04F500071C403 /* AddNewPasswordViewController.swift */,
+				9DF854B325C307B500C0F5DE /* AddNewPasswordTableViewCell.swift */,
 			);
 			path = "Add new password";
 			sourceTree = "<group>";
@@ -205,10 +214,13 @@
 			files = (
 				9D5D6EEA25C04F500071C403 /* AddNewPasswordViewController.swift in Sources */,
 				9DF854A525C1860F00C0F5DE /* TabBarController.swift in Sources */,
+				9DF854B225C3077B00C0F5DE /* SettingsTableViewCell.swift in Sources */,
 				9D5D6EE325BC51C80071C403 /* NavigationViewController.swift in Sources */,
 				9DF854A925C1D7D300C0F5DE /* SettingsNavigationViewController.swift in Sources */,
+				9DF854B425C307B500C0F5DE /* AddNewPasswordTableViewCell.swift in Sources */,
 				9D5D6ED425BC38870071C403 /* PswrdStore.xcdatamodeld in Sources */,
 				9D5D6ECE25BC38870071C403 /* ViewController.swift in Sources */,
+				9DF854B025C3073000C0F5DE /* TableViewCell.swift in Sources */,
 				9D5D6EE125BC3A110071C403 /* PasscodeViewController.swift in Sources */,
 				9D5D6ECA25BC38870071C403 /* AppDelegate.swift in Sources */,
 				9D5D6ECC25BC38870071C403 /* SceneDelegate.swift in Sources */,
